@@ -1,28 +1,21 @@
-const element = <h1>Hello,React!</h1>
-
-const name = "田中";
-const element2 = <p>こんにちは、{name}さん</p>
-
-function TodoItem() {
-  return (
-    <li className="todo-item">
-      <span>Reactを勉強する</span>
-      <button>削除</button>
-    </li>
-  );
-};
+import TodoItem from "./components/TodoItem";
 
 function App() {
-  const title = "マイTODOアプリ";
-
   return (
     <div className="container">
-      <h1>{title}</h1>
-      <ul>
-        {/* 部品を再利用する */}
-        <TodoItem />
-        <TodoItem />
-        <TodoItem />
+      <h1>React TODOアプリ</h1>
+
+      <form>
+        <input type="text" placeholder="何をする？" />
+        <button type="submit">追加</button>
+      </form>
+
+      <hr />
+
+      <ul className="todo-list">
+        <TodoItem task="Reactのコンポーネントを学ぶ" />
+        <TodoItem task="WordPressの資料を作る" />
+        <TodoItem task="お気に入りのIPAビールを買う" />
       </ul>
     </div>
   );
